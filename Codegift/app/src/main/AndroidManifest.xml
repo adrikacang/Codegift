@@ -7,21 +7,52 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+    <!-- To load images from the internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- To load images from a file OR from the internet -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- To use camera -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
+        android:name=".Kodegift"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity
-            android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            >s
+            android:name=".activity.LoginActivity">
 
         </activity>
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />  
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.RegisterActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".activity.SurveyActivity"
+            android:label="Survey"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.MySurveyActivity"
+            android:label="My Survey"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.ProductReviewActivity" />
+        <activity android:name=".activity.MyRedeemItemsActivity" />
     </application>
 
 </manifest>
